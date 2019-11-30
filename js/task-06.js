@@ -6,15 +6,11 @@
 */
 
 const calculateTotalPrice = (arr, productName) => {
-  let totalProductCost = 0;
-
   for (const obj of arr) {
     if (obj.name === productName) {
-      totalProductCost = obj.price * obj.quantity;
+      return obj.price * obj.quantity;
     }
   }
-
-  return totalProductCost;
 };
 
 // Вызовы функции для проверки работоспособности твоей реализации.
