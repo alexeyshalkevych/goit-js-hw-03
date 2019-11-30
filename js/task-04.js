@@ -11,8 +11,13 @@ const countTotalSalary = employees => {
   const valueInEmployees = Object.values(employees);
   let total = 0;
 
-  for (const employeValue of valueInEmployees) {
-    total += employeValue;
+  // for (const employeValue of valueInEmployees) {
+  //   total += employeValue;
+  // }
+  for (const employe in employees) {
+    if (employees.hasOwnProperty(employe)) {
+      total += employees[employe];
+    }
   }
 
   return total;
