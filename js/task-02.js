@@ -6,13 +6,13 @@
 
 const countProps = obj => {
   let count = 0;
-  const keys = Object.keys(obj);
 
-  for (const item of keys) {
-    if (item !== undefined) {
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
       count++;
     }
   }
+
   return count;
 };
 
