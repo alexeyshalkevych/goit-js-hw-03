@@ -6,36 +6,18 @@
 
 const findBestEmployee = employees => {
   let max = 0;
-  // let name;
+  let name;
 
-  const keys = Object.keys(employees);
-
-  // for (const item of keys) {
-  //   const value = employees[item];
-
-  //   if (value > max) {
-  //     max = value;
-  //     name = item;
-  //   }
-  // }
-
-  // return name;
-
-  for (const item of keys) {
-    const value = employees[item];
-
-    if (value > max) {
-      max = value;
+  for (const employe in employees) {
+    if (employees.hasOwnProperty(employe)) {
+      if (employees[employe] > max) {
+        max = employees[employe];
+        name = employe;
+      }
     }
   }
 
-  for (const item of keys) {
-    const value = employees[item];
-
-    if (value === max) {
-      return item;
-    }
-  }
+  return name;
 };
 
 // Вызовы функции для проверки работоспособности твоей реализации.
